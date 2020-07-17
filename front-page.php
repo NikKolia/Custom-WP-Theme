@@ -1,17 +1,100 @@
 <?php
 /*
-Template Name: Главная
+Template Name: НАШИ САМЫЕ БОЛЬШИЕ ПРОЕКТЫ
 */
 ?>
 <?php get_header(); ?>
 
-<div class="container-fluid">
-    <div class="row justify-content-center align-items-center">
-        <div class="col-md-auto center">
-            <p>Hello</p>
-        </div><!-- /.col-md -->
+    <!-- Local page styles
+    ================================================== -->
+    <style>
+        .masthead {
+            background: linear-gradient(0deg, rgba(64, 65, 73, 0.9), rgba(64, 65, 73, 0.9)), url(<?php echo get_template_directory_uri(); ?>/assets/images/header-bg.png);
+            background-position: center center;
+        }
+    </style>
+
+    <!--<div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-md-auto center">
+            <?php if (is_active_sidebar('counter')) : ?>
+                <div class="frontCounter">
+                    <?php dynamic_sidebar('counter'); ?>
+                </div>
+            <?php endif; ?>
+            </div>
+        </div>
+     </div> -->
+    <!-- To use "Counter area" uncomment this part of code, copy all that is in 'div class="counterItems"' and insert in text area widget that should be added in "Counter area". Then delete all '<div class="container">' bellow and all in it. -->
+
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-md-auto center">
+                <div class="counterItems">
+                    <div class="counterItems_item">
+                        <p>13</p>
+                        <p>ЕДИНИЦ</p>
+                        <p>техники</p>
+                    </div>
+                    <div class="counterItems_item">
+                        <p>26</p>
+                        <p>ЛЕТ</p>
+                        <p>на рынке</p>
+                    </div>
+                    <div class="counterItems_item">
+                        <p>365</p>
+                        <p>ДНЕЙ</p>
+                        <p>в году</p>
+                    </div>
+                    <div class="counterItems_item">
+                        <p>1588</p>
+                        <p>ДЕТЕЙ</p>
+                        <p>у Чингисхана</p>
+                    </div>
+                </div>
+            </div> <!-- /.col-md -->
+        </div>
     </div>
 
-</div><!-- /.container -->
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-md-auto center">
+                <h2><?php echo get_the_title(); ?></h2>
+            </div><!-- /.col-md -->
+        </div>
+    </div><!-- /.container -->
+
+    <div class="container">
+        <div class="row justify-content-center">
+
+            <?php
+            global $post;
+            $args = array(
+                'numberposts' => 3,
+                'post_type' => 'articles',
+                'publish' => true
+            );
+            $page_posts = get_posts($args);
+            foreach ($page_posts as $post) {
+                ?>
+                <div class="col-md-4 imageGrid">
+
+                    <div class="image">
+                        <?php echo get_the_post_thumbnail(get_the_ID(), 'article-image'); ?>
+                    </div>
+                    <div class="line">
+                        <hr />
+                    </div>
+                    <h3><?php the_title(); ?></h3>
+                    <?php the_excerpt(); ?>
+
+                </div><!-- /.col-md -->
+                <?php
+            }
+            wp_reset_postdata();
+            ?>
+
+        </div>
+    </div><!-- /.container -->
 
 <?php get_footer(); ?>

@@ -1,10 +1,21 @@
 <!-- footer
 ================================================== -->
 <footer class="footer">
-    <div class="container-fluid">
+    <div class="container">
         <div class="row justify-content-between align-items-center">
-            <div class="col-md-auto">
-                <p>Footer</p>
+            <div class="col-md-6">
+            <?php if ( is_active_sidebar( 'footer-left' ) ) : ?>
+                <div class="footer-section-one">
+                    <?php dynamic_sidebar( 'footer-left' ); ?>
+                </div>
+            <?php endif; ?>
+            </div><!-- /.col-md -->
+            <div class="col-md-6">
+            <?php if ( is_active_sidebar( 'footer-right' ) ) : ?>
+                <div class="footer-section-two">
+                    <?php dynamic_sidebar( 'footer-right' ); ?>
+                </div>
+            <?php endif; ?>
             </div><!-- /.col-md -->
         </div>
     </div><!-- /.container -->
