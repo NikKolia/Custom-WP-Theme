@@ -79,7 +79,7 @@ Template Name: НАШИ САМЫЕ БОЛЬШИЕ ПРОЕКТЫ
                 ?>
                 <div class="col-md-4 imageGrid">
 
-                    <div class="image">
+                    <div class="imageGrid-image">
                         <?php echo get_the_post_thumbnail(get_the_ID(), 'article-image'); ?>
                     </div>
                     <div class="line">

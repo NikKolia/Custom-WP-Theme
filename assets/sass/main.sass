@@ -67,7 +67,6 @@ h3
         color: $counterFirst
         font-weight: 500
         font-size: 72px
-        line-height: 107px
         text-transform: uppercase
         margin-top: 55px
         margin-bottom: 3px
@@ -76,7 +75,6 @@ h3
         color: $counterSecond
         font-weight: 600
         font-size: 36px
-        line-height: 53px
         text-transform: uppercase
         margin-top: 0
         margin-bottom: 0
@@ -92,6 +90,18 @@ h3
 
 .imageGrid
   margin-top: 18px
+  &-image
+    padding-bottom: calc(380 / 350 * 100%)
+    position: relative
+    width: 100%
+    img
+      display: block
+      position: absolute
+      vertical-align: middle
+      width: 100%
+      height:  calc(380 / 350 * 100%)
+      object-fit: contain
+
   h3
     margin-top: 15px
     margin-bottom: 0
