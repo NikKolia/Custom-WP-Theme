@@ -14,45 +14,15 @@ Template Name: НАШИ САМЫЕ БОЛЬШИЕ ПРОЕКТЫ
         }
     </style>
 
-    <!--<div class="container">
-        <div class="row justify-content-md-center">
-            <div class="col-md-auto center">
-            <?php if (is_active_sidebar('counter')) : ?>
-                <div class="frontCounter">
-                    <?php dynamic_sidebar('counter'); ?>
-                </div>
-            <?php endif; ?>
-            </div>
-        </div>
-     </div> -->
-    <!-- To use "Counter area" uncomment this part of code, copy all that is in 'div class="counterItems"' and insert in text area widget that should be added in "Counter area". Then delete all '<div class="container">' bellow and all in it. -->
-
     <div class="container">
         <div class="row justify-content-md-center">
             <div class="col-md-auto center">
-                <div class="counterItems">
-                    <div class="counterItems_item">
-                        <p>13</p>
-                        <p>ЕДИНИЦ</p>
-                        <p>техники</p>
+                <?php if (is_active_sidebar('counter')) : ?>
+                    <div class="frontCounter">
+                        <?php dynamic_sidebar('counter'); ?>
                     </div>
-                    <div class="counterItems_item">
-                        <p>26</p>
-                        <p>ЛЕТ</p>
-                        <p>на рынке</p>
-                    </div>
-                    <div class="counterItems_item">
-                        <p>365</p>
-                        <p>ДНЕЙ</p>
-                        <p>в году</p>
-                    </div>
-                    <div class="counterItems_item">
-                        <p>1588</p>
-                        <p>ДЕТЕЙ</p>
-                        <p>у Чингисхана</p>
-                    </div>
-                </div>
-            </div> <!-- /.col-md -->
+                <?php endif; ?>
+            </div>
         </div>
     </div>
 
@@ -83,7 +53,7 @@ Template Name: НАШИ САМЫЕ БОЛЬШИЕ ПРОЕКТЫ
                         <?php echo get_the_post_thumbnail(get_the_ID(), 'article-image'); ?>
                     </div>
                     <div class="line">
-                        <hr />
+                        <hr/>
                     </div>
                     <h3><?php the_title(); ?></h3>
                     <?php the_excerpt(); ?>
