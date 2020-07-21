@@ -9,8 +9,7 @@ Template Name: НАШИ САМЫЕ БОЛЬШИЕ ПРОЕКТЫ
     ================================================== -->
     <style>
         .masthead {
-            background: linear-gradient(0deg, rgba(64, 65, 73, 0.9), rgba(64, 65, 73, 0.9)), url(<?php echo get_template_directory_uri(); ?>/assets/images/header-bg.png);
-            background-position: center center;
+            background: url(<?php echo get_template_directory_uri(); ?>/assets/images/header-bg.png);
         }
     </style>
 

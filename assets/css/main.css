@@ -29,9 +29,9 @@ body {
 }
 
 .masthead {
-  background-color: #404149;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center center !important;
   height: 75vh;
   padding-top: 22px;
 }
