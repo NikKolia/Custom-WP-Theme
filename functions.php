@@ -16,7 +16,17 @@ function theme_js() {
 add_theme_support('title-tag');
 add_theme_support('post-thumbnails');
 add_theme_support( 'widgets' );
+// add_theme_support( 'custom-logo');
 
+// Register menu
+register_nav_menus( array(
+    'primary'  => __( 'Header menu', 'fe_starter' ),
+) );
+
+// Adding standart menu function
+function courage_default_menu() {
+    echo '<ul id="mainnav-menu" class="menu">'. wp_list_pages('title_li=&echo=0') .'</ul>';
+}
 
 function create_post_type() {
     $labels = array(
@@ -210,3 +220,4 @@ class developer_widget extends WP_Widget {
         return $instance;
     }
 } // Class developer_widget ends here
+

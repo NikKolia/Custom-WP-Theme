@@ -1,0 +1,413 @@
+/*--------------------------------------------------------------
+# Normalize preferably used in the project
+--------------------------------------------------------------*/
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, dialog, div, dl, dt, em, embed, fieldset, figcaption, figure, font, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, html, i, iframe, img, ins, kbd, label, legend, li, main, mark, menu, meter, nav, object, ol, output, p, pre, progress, q, rp, rt, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video, xmp {border: 0;margin: 0;padding: 0;font-size: 100%;}html, body {height: 100%;}article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section {display: block;}b, strong {font-weight: bold;}img {color: transparent;font-size: 0;vertical-align: middle;-ms-interpolation-mode: bicubic;}ul, ol {list-style: none;}li {display: list-item;}table {border-collapse: collapse;border-spacing: 0;}th, td, caption {font-weight: normal;vertical-align: top;text-align: left;}q {quotes: none;}q:before, q:after {content: "";content: none;}sub, sup, small {font-size: 75%;}sub, sup {line-height: 0;position: relative;vertical-align: baseline;}sub {bottom: -0.25em;}sup {top: -0.5em;}svg {overflow: hidden;}
+
+
+/*---------------------------------------------------------------------------------------
+# Styles for the template, they are to be changed if needed
+----------------------------------------------------------------------------------------*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Clearing Floats */
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.clearfix {
+  *zoom: 1; /* For IE 6/7 only */
+}
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
+  display: block;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #F5F5F5;
+  text-align: left;
+}
+
+[tabindex="-1"]:focus {
+  outline: 0 !important;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+
+h2 {
+  font-size: 1.8rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.wrapper {
+  max-width: 1100px;
+  height: auto;
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+  margin: 40px auto;
+}
+
+.main-header {
+  padding: 40px 40px;
+}
+
+.main-header h1 {
+  margin: 0;
+}
+
+.main-content {
+  padding: 30px 40px;
+}
+
+.main-footer {
+
+}
+
+@media only screen and (max-width: 467px) {
+  h1 {
+    font-size: 1.5rem;
+    line-height: 1;
+    margin-bottom: 0;
+  }
+  .wrapper {
+    margin: 0px auto;
+  }
+  .main-header,
+  .main-content,
+  .main-footer {
+    padding: 30px 20px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Styles for the menu
+--------------------------------------------------------------*/
+@font-face {
+  font-family: 'fontello';
+  src: url('../fonts/fontello/fontello.eot?68673724');
+  src: url('../fonts/fontello/fontello.eot?68673724#iefix') format('embedded-opentype'),
+  url('../fonts/fontello/fontello.woff2?68673724') format('woff2'),
+  url('../fonts/fontello/fontello.woff?68673724') format('woff'),
+  url('../fonts/fontello/fontello.ttf?68673724') format('truetype'),
+  url('../fonts/fontello/fontello.svg?68673724#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+}
+
+.icon-down-open:before { content: '\f004'; } /* '' */
+.icon-up-open:before { content: '\f005'; } /* '' */
+.icon-right-open:before { content: '\f006'; } /* '' */
+.icon-left-open:before { content: '\f007'; } /* '' */
+.icon-menu:before { content: '\f008'; } /* '' */
+
+#mainnav-icon, #mainnav-toggle {
+  display: none;
+}
+#mainnav {
+  background: #252525;
+}
+#mainnav-menu {
+  float: left;
+  list-style-type: none;
+  list-style-position: outside;
+  position: relative;
+  padding: 0 0.4em;
+  margin: 0;
+}
+#mainnav-menu li{
+  float: left;
+  position: relative;
+  list-style: none;
+}
+#mainnav-menu a {
+  display: block;
+  padding: 1em 1.4em;
+  text-decoration: none;
+  font-size: 1em;
+}
+#mainnav-menu a:link, #mainnav-menu a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+#mainnav-menu a:hover {
+  background: rgba(0, 0, 0, 0.15);
+}
+#mainnav-menu ul {
+  position: absolute;
+  display: none;
+  z-index: 99;
+  background: #252525;
+  padding: 0;
+}
+#mainnav-menu ul li{
+  margin: 0;
+  border: none;
+}
+#mainnav-menu ul a {
+  width: 250px;
+  padding: 1em;
+  float: left;
+  background: rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+#mainnav-menu ul a:link, #mainnav-menu ul a:visited{
+  color: #fff;
+  font-size: 0.9em;
+  text-decoration: none;
+}
+#mainnav-menu ul a:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+#mainnav-menu li ul ul {
+  margin-left: 250px;
+}
+#mainnav-menu li ul ul a {
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+#mainnav-menu li:hover ul ul, #mainnav-menu li:hover ul ul ul, #mainnav-menu li:hover ul ul ul ul{
+  display:none;
+}
+#mainnav-menu li:hover ul, #mainnav-menu li li:hover ul, #mainnav-menu li li li:hover ul, #mainnav-menu li li li li:hover ul{
+  display:block;
+}
+#mainnav-menu li.current_page_item a, #mainnav-menu li.current-menu-item a {
+  text-decoration: underline;
+}
+#mainnav-menu li.current_page_item ul li a, #mainnav-menu li.current-menu-item ul li a{
+  text-decoration: none;
+}
+#mainnav-menu ul li.current_page_item a, #mainnav-menu ul li.current-menu-item a {
+  text-decoration: underline;
+}
+#mainnav-menu ul li.current_page_item ul li a, #mainnav-menu ul li.current-menu-item ul li a{
+  text-decoration: none;
+}
+/* Tablets (landscape) | <960px */
+@media only screen and (max-width: 991px) {
+  /* Mobile Main Navigation */
+
+  /* Reset */
+  #mainnav, #mainnav-menu, #mainnav-menu li, #mainnav-menu a, #mainnav-menu ul,
+  #mainnav-menu ul a, #mainnav-menu ul ul, #mainnav-menu li ul ul {
+    margin: 0;
+    padding: 0;
+    position: static;
+    float: none;
+    display: inline;
+    font-size: 1.0em;
+    border: none;
+    box-shadow: none;
+    background: none;
+    top: 0;
+    left: 0;
+  }
+
+  #mainnav-menu li:hover ul ul, #mainnav-menu li:hover ul ul ul, #mainnav-menu li:hover ul ul ul ul,
+  #mainnav-menu li:hover ul, #mainnav-menu li li:hover ul, #mainnav-menu li li li:hover ul, #mainnav-menu li li li li:hover ul
+  {
+    display: inline;
+  }
+
+  #mainnav-mobile-menu {
+    background: #252525;
+  }
+  #mainnav-toggle {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 1em 1.5em 0.8em;
+    text-decoration: none;
+    color: #fff;
+    background: #252525;
+    border: none;
+    font-size: 1.05em;
+    font-weight: 600;
+    text-align: left;
+  }
+  #mainnav-toggle:hover {
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.1);
+  }
+  #mainnav-toggle:after {
+    float: right;
+    margin: 0;
+    float: right;
+    margin: 0;
+    font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    content: "\f008";
+  }
+
+  #mainnav-menu {
+    display: none;
+    width: 100%;
+    background: #252525;
+  }
+  #mainnav-menu a {
+    display: block;
+    padding: .9em;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.15);
+    clear: left;
+  }
+  #mainnav-menu a:link, #mainnav-menu a:visited {
+    color: #fff;
+  }
+  #mainnav-menu a:hover {
+    background: rgba(0, 0, 0, 0.25);
+  }
+  #mainnav-menu ul {
+    width: 100%;
+  }
+  #mainnav-menu ul a {
+    display: block;
+    width: 100%;
+    padding: 1em 1em 1em 2em;
+    font-size: 0.9em;
+    background: rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  #mainnav-menu ul a:hover {
+    background: rgba(0, 0, 0, 0.15);
+  }
+  #mainnav-menu ul li ul {
+    float: left;
+    padding: 0;
+    width: 100%;
+  }
+  #mainnav-menu ul li ul a {
+    padding-left: 4em;
+  }
+  #mainnav-menu ul li ul li ul a{
+    padding-left: 6em;
+  }
+  #mainnav-menu li.current_page_item a, #mainnav-menu li.current-menu-item a {
+    text-decoration: underline;
+  }
+  #mainnav-menu li.current_page_item ul li a, #mainnav-menu li.current-menu-item ul li a{
+    text-decoration: none;
+  }
+  #mainnav-menu ul li.current_page_item a, #mainnav-menu ul li.current-menu-item a {
+    text-decoration: underline;
+  }
+
+  #mainnav-menu .submenu-dropdown-toggle {
+    float: right;
+    display: block;
+    margin: 0;
+    padding: .9em 1.4em;
+    background: rgba(0,0,0,0.15);
+  }
+  #mainnav-menu .submenu-dropdown-toggle:hover {
+    cursor: pointer;
+    background: rgba(0,0,0,0.35);
+  }
+  #mainnav-menu .submenu-dropdown-toggle:before {
+    font-size: 1em;
+    line-height: 1;
+    font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    content: "\f004";
+    color: #fff;
+  }
+  #mainnav-menu .submenu-dropdown-toggle.active:before {
+    content: '\f005';
+  }
+  #mainnav-menu ul .submenu-dropdown-toggle {
+    padding: 0.75em 1.2em;
+  }
+  #mainnav-menu ul .submenu-dropdown-toggle:before {
+    font-size: 16px;
+  }
+}
+
+/* Big Screens Navi Fix | >720px */
+@media only screen and (min-width: 992px) {
+  /* ensure #nav is visible on desktop version */
+  #topnav-menu, #mainnav-menu {
+    display: block !important;
+  }
+  #mainnav-menu li.menu-item:hover a {
+    background: rgba(0, 0, 0, 0.15);
+  }
+  #mainnav-menu li.menu-item:hover ul a:hover {
+    background: rgba(0, 0, 0, 0.25);
+  }
+  #mainnav-menu .menu-item-has-children .submenu-dropdown-toggle:after {
+    font-size: 1em;
+    line-height: 1;
+    font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    content: "\f004";
+    color: #fff;
+    position: absolute;
+    right: 0.4em;
+    top: 1.3em;
+  }
+}
