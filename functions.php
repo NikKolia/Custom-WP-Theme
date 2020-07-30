@@ -4,13 +4,16 @@ add_action('wp_enqueue_scripts', 'theme_styles');
 add_action('wp_enqueue_scripts', 'theme_js');
 
 function theme_styles() {
-    wp_enqueue_style('main', get_template_directory_uri() . '/assets/css/main.css');
-    wp_enqueue_style('bootstrap', get_template_directory_uri() . '/assets/css/bootstrap-grid.min.css');
+    wp_enqueue_style( 'uikit', get_template_directory_uri() . '/assets/css/uikit.min.css' );
+    wp_enqueue_style( 'bootstrap-grid', get_template_directory_uri() . '/assets/css/bootstrap-grid.min.css', array('uikit') );
+    wp_enqueue_style( 'main', get_template_directory_uri() . '/assets/css/main.css', array('uikit','bootstrap-grid') );
 }
 
 function theme_js() {
     wp_enqueue_script('jquery');
     wp_enqueue_script('main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), null, true);
+    wp_enqueue_script( 'uikit', get_template_directory_uri() . '/assets/js/uikit.min.js', array('jquery'), null, true);
+    wp_enqueue_script( 'uikit-icons', get_template_directory_uri() . '/assets/js/uikit-icons.min.js', array('jquery'), null, true);
 }
 
 add_theme_support('title-tag');
